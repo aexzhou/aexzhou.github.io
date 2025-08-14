@@ -1,0 +1,1262 @@
+---
+---
+/* @import "main"; */
+
+/**
+ * Reset some basic elements
+ */
+ body, h1, h2, h3, h4, h5, h6,
+ p, blockquote, pre, hr,
+ dl, dd, ol, ul, figure {
+   margin: 0;
+   padding: 0;
+ }
+ 
+ /* Box sizing rules */
+ *,
+ *::before,
+ *::after {
+ box-sizing: border-box;
+ }
+ 
+ :root {
+ --body-color: hsl(0, 5%, 10%);
+ --body-bg-color: hsl(210, 20%, 98%);
+ --link-visited: hsl(0, 100%, 33%);
+ --link-focus-outline: hsl(244, 100%, 65%);
+ --pre-bg-color: hsl(210, 28%, 93%);
+ --kbd-bg-color: hsl(210, 5%, 100%);
+ --kbd-border-color: hsl(210, 5%, 70%);
+ --table-border-color: black;
+ --border-width-thin: 1.36px;
+ --border-width-thick: 2.27px;
+ --sidenote-target-border-color: hsl(55, 55%, 70%);
+ --footnotes-border-color: hsl(0, 0%, 39%);
+ --text-indent-size: 1.463rem; /* In 12pt [Latin Modern font] LaTeX article
+ \parindent =~ 17.625pt; taking also into account the ratio
+ 1pt[LaTeX] = (72 / 72.27) * 1pt[HTML], with default 12pt/1rem LaTeX.css font
+ size, the identation value in rem CSS units is:
+ \parindent =~ 17.625 * (72 / 72.27) / 12 = 1.463rem. */
+ }
+ 
+ .latex-dark {
+ --body-color: hsl(0, 0%, 86%);
+ --body-bg-color: hsl(0, 0%, 16%);
+ --link-visited: hsl(196 80% 77%);
+ --link-focus-outline: hsl(215, 63%, 73%);
+ --pre-bg-color: hsl(0, 1%, 25%);
+ --kbd-bg-color: hsl(0, 0%, 16%);
+ --kbd-border-color: hsl(210, 5%, 70%);
+ --table-border-color: white;
+ --sidenote-target-border-color: hsl(0, 0%, 59%);
+ --footnotes-border-color: hsl(0, 0%, 59%);
+ --proof-symbol-filter: invert(80%);
+ }
+ 
+ @media (prefers-color-scheme: dark) {
+   .latex-dark-auto {
+   --body-color: hsl(0, 0%, 86%);
+   --body-bg-color: hsl(0, 0%, 16%);
+   --link-visited: hsl(196 80% 77%);
+   --link-focus-outline: hsl(215, 63%, 73%);
+   --pre-bg-color: hsl(0, 1%, 25%);
+   --kbd-bg-color: hsl(0, 0%, 16%);
+   --kbd-border-color: hsl(210, 5%, 70%);
+   --table-border-color: white;
+   --sidenote-target-border-color: hsl(0, 0%, 59%);
+   --footnotes-border-color: hsl(0, 0%, 59%);
+   --proof-symbol-filter: invert(80%);
+ }
+ }
+ 
+ 
+ 
+ /* Make default font-size 1rem and add smooth scrolling to anchors */
+ html {
+   font-size: 1rem;
+ }
+ @media (prefers-reduced-motion: no-preference) {
+ html {
+     scroll-behavior: smooth;
+ }
+ }
+ 
+ body.libertinus {
+ font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
+ }
+ 
+ .text-justify {
+   text-align: justify;
+ }
+ 
+ /**
+  * Basic styling
+  */
+ body {
+ 
+   font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
+   line-height: 1.6;
+ 
+   max-width: 120ch;
+   min-height: 100vh;
+   overflow-x: hidden;
+   /* margin: 5rem auto; */
+   padding: 0rem 0rem;
+   /* margin-top: 5rem; */
+   counter-reset: theorem definition sidenote-counter;
+ 
+   color: var(--body-color);
+   background-color: var(--body-bg-color);
+ 
+   text-rendering: optimizeLegibility;
+ 
+   /* Allow automatic hyphenation for all text in the document */
+   hyphens: auto;
+   -webkit-hyphens: auto;
+   -moz-hyphens: auto;
+ 
+ 
+   /* font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+   color: #111;
+   background-color: #fdfdfd;
+   -webkit-text-size-adjust: 100%;
+   -webkit-font-feature-settings: "kern" 1;
+   -moz-font-feature-settings: "kern" 1;
+   -o-font-feature-settings: "kern" 1;
+   font-feature-settings: "kern" 1;
+   font-kerning: normal;
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+ }
+ 
+ /**
+  * Set `margin-bottom` to maintain vertical rhythm
+  */
+ h1, h2, h3, h4, h5, h6,
+ p, blockquote, pre,
+ ul, ol, dl, figure,
+ .highlight {
+   margin-bottom: 15px;
+ }
+ 
+ 
+ 
+ /* p { */
+   /* margin-top: 1rem; */
+ /* } */
+   
+ /* Indents paragraphs like in LaTeX documents*/
+ .indent-pars p {
+ text-indent: var(--text-indent-size);
+ }
+ 
+ .indent-pars p.no-indent,
+ p.no-indent {
+ text-indent: 0;
+ }
+ 
+ .indent-pars ol p,
+ .indent-pars ul p {
+ text-indent: 0;
+ }
+ 
+ .indent-pars h2 + p,
+ .indent-pars h3 + p,
+ .indent-pars h4 + p {
+ text-indent: 0;
+ }
+ 
+ /**
+  * `main` element
+  */
+ main {
+   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+ }
+ 
+ /**
+  * Images
+  */
+ img {
+   max-width: 100%;
+   /* vertical-align: middle; */
+   height: auto;
+   display: block;
+ }
+ 
+ /* Prevent textarea from overflowing */
+ textarea {
+   width: 100%;
+ }
+ 
+ /* Natural flow and rhythm in articles by default */
+ article > * + * {
+   margin-top: 1em;
+ }
+ 
+ /**
+  * Figures
+  */
+ figure > img {
+   display: block;
+ }
+ 
+ figcaption {
+   font-size: 14px;
+ }
+ 
+ /**
+  * Lists
+  */
+ ul, ol {
+   margin-left: 30px;
+ }
+ 
+ li > ul,
+ li > ol {
+   margin-bottom: 0;
+ }
+ 
+ /**
+  * Headings
+  */
+ /* h1, h2, h3, h4, h5, h6 {
+   font-weight: 400;
+ } */
+ 
+ /**
+  * Links
+  */
+ /* A elements that don't have a class get default styles */
+ a:not([class]) {
+   text-decoration-skip-ink: auto;
+   }
+   
+ /* Make links red */
+ a,
+ a:visited {
+ color: var(--link-visited);
+ }
+ 
+ a:focus {
+ outline-offset: 2px;
+ outline: 2px solid var(--link-focus-outline);
+ /* background-color: var(--link-focus-outline); */
+ }
+   
+ a:hover {
+   color: #111;
+   text-decoration: underline;
+ }
+ .social-media-list a:hover {
+   text-decoration: none;
+ }
+ .social-media-list a:hover .username {
+   text-decoration: underline;
+ }
+ 
+ .button-link, .button-link:visited {
+   color: var(--body-color);
+ }
+ 
+ /**
+  * Blockquotes
+  */
+ blockquote {
+   color: #828282;
+   border-left: 4px solid #e8e8e8;
+   padding-left: 15px;
+   font-size: 18px;
+   letter-spacing: -1px;
+   font-style: italic;
+ }
+ blockquote > :last-child {
+   margin-bottom: 0;
+ }
+ 
+ /**
+  * Code formatting
+  */
+ code,
+ pre,
+ kbd {
+   font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+       monospace;
+   font-size: 85%;
+   hyphens: none;
+ }
+ pre {
+   padding: 1rem 1.4rem;
+   max-width: 100%;
+   overflow: auto;
+   border-radius: 4px;
+   background: var(--pre-bg-color);
+ }
+ pre code {
+   font-size: 95%;
+   position: relative;
+ }
+ kbd {
+   background: var(--kbd-bg-color);
+   border: 1px solid var(--kbd-border-color);
+   border-radius: 2px;
+   padding: 2px 4px;
+   font-size: 75%;
+ }
+ /**
+  * Wrapper
+  */
+ .wrapper {
+   max-width: -webkit-calc(800px - (30px * 2));
+   max-width: calc(800px - 30px * 2);
+   margin-right: auto;
+   margin-left: auto;
+   padding-right: 30px;
+   padding-left: 30px;
+ }
+ @media screen and (max-width: 800px) {
+   .wrapper {
+     max-width: -webkit-calc(800px - (30px));
+     max-width: calc(800px - (30px));
+     padding-right: 15px;
+     padding-left: 15px;
+   }
+ }
+ 
+ /**
+  * Clearfix
+  */
+ .footer-col-wrapper:after, .wrapper:after {
+   content: "";
+   display: table;
+   clear: both;
+ }
+ 
+ /**
+  * Icons
+  */
+ .svg-icon {
+   width: 16px;
+   height: 16px;
+   display: inline-block;
+   fill: #828282;
+   padding-right: 5px;
+   vertical-align: text-top;
+ }
+ 
+ .social-media-list li + li {
+   padding-top: 5px;
+ }
+ 
+ 
+ /* Better tables */
+ table:not(.borders-custom) {
+   border-collapse: collapse;
+   border-spacing: 0;
+   width: auto;
+   max-width: 100%;
+   border-top: var(--border-width-thick) solid var(--table-border-color);
+   border-bottom: var(--border-width-thick) solid var(--table-border-color);
+   /* display: block; */
+   overflow-x: auto; /* does not work because element is not block */
+   /* white-space: nowrap; */
+   counter-increment: caption;
+   }
+   /* add bottom border on column table headings  */
+   table:not(.borders-custom) tr > th[scope='col'] {
+   border-bottom: var(--border-width-thin) solid var(--table-border-color);
+   }
+   /* add right border on row table headings  */
+   table:not(.borders-custom) tr > th[scope='row'] {
+   border-right: var(--border-width-thin) solid var(--table-border-color);
+   }
+   table:not(.borders-custom) > tbody > tr:first-child > td,
+   table:not(.borders-custom) > tbody > tr:first-child > th {
+   border-top: var(--border-width-thin) solid var(--table-border-color);
+   }
+   table:not(.borders-custom) > tbody > tr:last-child > td,
+   table:not(.borders-custom) > tbody > tr:last-child > th {
+   border-bottom: var(--border-width-thin) solid var(--table-border-color);
+   }
+   
+   th,
+   td {
+   text-align: left;
+   padding: 0.5rem;
+   line-height: 1.1;
+   }
+   /* Table caption */
+   caption {
+   text-align: left;
+   font-size: 0.923em;
+   /* border-bottom: 2pt solid #000; */
+   padding: 0 0.25em 0.25em;
+   width: 100%;
+   margin-left: 0;
+   }
+   
+   caption::before {
+   content: 'Table ' counter(caption) '. ';
+   font-weight: bold;
+   }
+   
+   /* allow scroll on the x-axis */
+   .scroll-wrapper {
+   overflow-x: auto;
+   }
+   
+   /* if a table is wrapped in a scroll wrapper,
+   the table cells shouldn't wrap */
+   .scroll-wrapper > table td {
+   white-space: nowrap;
+   }
+   
+   /* Table custom borders */
+   table.borders-custom {
+   border-collapse: collapse;
+   border-spacing: 0;
+   width: auto;
+   max-width: 100%;
+   overflow-x: auto;
+   counter-increment: caption;
+   }
+   
+   .border-top-thick {
+   border-top: var(--border-width-thick) solid var(--table-border-color);
+   }
+   .border-right-thick {
+   border-right: var(--border-width-thick) solid var(--table-border-color);
+   }
+   .border-bottom-thick {
+   border-bottom: var(--border-width-thick) solid var(--table-border-color);
+   }
+   .border-left-thick {
+   border-left: var(--border-width-thick) solid var(--table-border-color);
+   }
+   
+   .border-top-thin {
+   border-top: var(--border-width-thin) solid var(--table-border-color);
+   }
+   .border-right-thin {
+   border-right: var(--border-width-thin) solid var(--table-border-color);
+   }
+   .border-bottom-thin {
+   border-bottom: var(--border-width-thin) solid var(--table-border-color);
+   }
+   .border-left-thin {
+   border-left: var(--border-width-thin) solid var(--table-border-color);
+   }
+   
+   /* Table column alignment */
+   .col-1-l tr > :nth-child(1),
+   .col-2-l tr > :nth-child(2),
+   .col-3-l tr > :nth-child(3),
+   .col-4-l tr > :nth-child(4),
+   .col-5-l tr > :nth-child(5),
+   .col-6-l tr > :nth-child(6),
+   .col-7-l tr > :nth-child(7),
+   .col-8-l tr > :nth-child(8),
+   .col-9-l tr > :nth-child(9),
+   .col-10-l tr > :nth-child(10),
+   .col-11-l tr > :nth-child(11),
+   .col-12-l tr > :nth-child(12) {
+   text-align: left;
+   }
+   .col-1-c tr > :nth-child(1),
+   .col-2-c tr > :nth-child(2),
+   .col-3-c tr > :nth-child(3),
+   .col-4-c tr > :nth-child(4),
+   .col-5-c tr > :nth-child(5),
+   .col-6-c tr > :nth-child(6),
+   .col-7-c tr > :nth-child(7),
+   .col-8-c tr > :nth-child(8),
+   .col-9-c tr > :nth-child(9),
+   .col-10-c tr > :nth-child(10),
+   .col-11-c tr > :nth-child(11),
+   .col-12-c tr > :nth-child(12) {
+   text-align: center;
+   }
+   .col-1-r tr > :nth-child(1),
+   .col-2-r tr > :nth-child(2),
+   .col-3-r tr > :nth-child(3),
+   .col-4-r tr > :nth-child(4),
+   .col-5-r tr > :nth-child(5),
+   .col-6-r tr > :nth-child(6),
+   .col-7-r tr > :nth-child(7),
+   .col-8-r tr > :nth-child(8),
+   .col-9-r tr > :nth-child(9),
+   .col-10-r tr > :nth-child(10),
+   .col-11-r tr > :nth-child(11),
+   .col-12-r tr > :nth-child(12) {
+   text-align: right;
+   }
+   
+   /* Format figure captions (based on table captions) */
+   figure {
+   counter-increment: figcaption;
+   }
+   figcaption {
+   text-align: left;
+   font-size: 0.923em;
+   padding: 0.25em 0.25em 0;
+   width: 100%;
+   margin-left: 0;
+   }
+   figcaption::before {
+   content: 'Figure ' counter(figcaption) '. ';
+   font-weight: bold;
+   }
+   
+   /* Center align the title */
+   h1:first-child {
+   text-align: center;
+   }
+   
+   /* Nested ordered list for ToC */
+   nav ol {
+   counter-reset: item;
+   padding-left: 2rem;
+   }
+   nav ol > li {
+   display: block;
+   }
+   nav ol > li::before {
+   content: counters(item, '.') ' ';
+   counter-increment: item;
+   padding-right: 0.85rem;
+   }
+   
+   /* Center definitions (most useful for display equations) */
+   dl dd {
+   text-align: center;
+   }
+   
+   /* Theorem */
+   .theorem {
+   counter-increment: theorem;
+   display: block;
+   margin: 12px 0;
+   font-style: italic;
+   }
+   .theorem::before {
+   content: 'Theorem ' counter(theorem) '. ';
+   font-weight: bold;
+   font-style: normal;
+   }
+   
+   /* Lemma */
+   .lemma {
+   counter-increment: theorem;
+   display: block;
+   margin: 12px 0;
+   font-style: italic;
+   }
+   .lemma::before {
+   content: 'Lemma ' counter(theorem) '. ';
+   font-weight: bold;
+   font-style: normal;
+   }
+   
+   /* Proof */
+   .proof {
+   display: block;
+   margin: 12px 0;
+   font-style: normal;
+   position: relative;
+   }
+   .proof::before {
+   content: 'Proof. ' attr(title);
+   font-style: italic;
+   }
+   .proof::after {
+   content: '◾️';
+   filter: var(--proof-symbol-filter);
+   position: absolute;
+   right: -12px;
+   bottom: -2px;
+   }
+   
+   /* Definition */
+   .definition {
+   counter-increment: definition;
+   display: block;
+   margin: 12px 0;
+   font-style: normal;
+   }
+   .definition::before {
+   content: 'Definition ' counter(definition) '. ';
+   font-weight: bold;
+   font-style: normal;
+   }
+   
+   /* Center align author name, use small caps and add vertical spacing  */
+   .author {
+   margin: 0.85rem 0;
+   font-variant-caps: small-caps;
+   text-align: center;
+   }
+   
+   /* Sidenotes */
+   
+   .sidenote {
+   font-size: 0.8rem;
+   float: right;
+   clear: right;
+   width: 18vw;
+   margin-right: -20vw;
+   margin-bottom: 1em;
+   text-indent: 0;
+   /* Right sidenotes explicitly aligned to left for wide screens */
+   text-align: left;
+   }
+   
+   .sidenote.left {
+   float: left;
+   margin-left: -20vw;
+   margin-bottom: 1em;
+   text-indent: 0;
+   /* Left sidenotes explicitly aligned to right for wide screens */
+   text-align: right;
+   }
+   
+   /* Justify all sidenotes for wide screens when `text-justify` class is used */
+   body.text-justify .sidenote,
+   body.text-justify .sidenote.left {
+       text-align: justify;
+   }
+   
+   /* (WIP) add border when a sidenote is clicked on */
+   .sidenote:target {
+   border: var(--sidenote-target-border-color) 1.5px solid;
+   padding: 0 .5rem;
+   scroll-margin-block-start: 10rem;
+   }
+   
+   /* sidenote counter */
+   .sidenote-number {
+   counter-increment: sidenote-counter;
+   }
+   
+   .sidenote-number::after,
+   .sidenote::before {
+   position: relative;
+   vertical-align: baseline;
+   }
+   
+   /* add number in main content */
+   .sidenote-number::after {
+   content: counter(sidenote-counter);
+   font-size: 0.7rem;
+   top: -0.5rem;
+   left: 0.1rem;
+   }
+   
+   /* add number in front of the sidenote */
+   .sidenote-number ~ .sidenote::before {
+   content: counter(sidenote-counter) ' ';
+   font-size: 0.7rem;
+   top: -0.5rem;
+   }
+   
+   label.sidenote-toggle:not(.sidenote-number) {
+   display: none;
+   }
+   
+   /* sidenotes inside blockquotes are indented more */
+   blockquote .sidenote {
+   margin-right: -24vw;
+   width: 18vw;
+   }
+   
+   
+   label.sidenote-toggle {
+   display: inline;
+   cursor: pointer;
+   }
+   
+   input.sidenote-toggle {
+   display: none;
+   }
+   
+   @media (max-width: 1050px) {
+   label.sidenote-toggle:not(.sidenote-number) {
+       display: inline;
+   }
+   .sidenote {
+       display: none;
+   }
+   .sidenote-toggle:checked + .sidenote {
+       display: block;
+       margin: 0.5rem 1.25rem 1rem 0.5rem;
+       float: left;
+       left: 1rem;
+       clear: both;
+       width: 95%;
+   }
+   
+   /* All sidenotes explicitly aligned to left for narrow screens */
+   .sidenote-toggle:checked + .sidenote.left {
+       text-align: left;
+   }
+   
+   /* Justify all sidenotes for narrow screens when `text-justify` class is used */
+   body.text-justify .sidenote-toggle:checked + .sidenote.left {
+       text-align: justify;
+   }
+   
+   /* tweak indentation of sidenote inside a blockquote */
+   blockquote .sidenote {
+       margin-right: -25vw;
+       width: 16vw;
+   }
+   }
+   
+   /* Make footnote text smaller */
+   .footnotes p {
+   line-height: 1.5;
+   font-size: 85%;
+   margin-bottom: 0.4rem;
+   }
+   .footnotes {
+   border-top: 1px solid var(--footnotes-border-color);
+   }
+   
+   /* Center title and paragraph */
+   .abstract,
+   .abstract p {
+   text-align: center;
+   margin-top: 0;
+   }
+   .abstract {
+   margin: 2.25rem 0;
+   }
+   .abstract > h2 {
+   font-size: 1rem;
+   margin-bottom: -0.2rem;
+   }
+   
+   /* Format the LaTeX symbol correctly (a higher up, e lower) */
+   .latex span:nth-child(1) {
+   text-transform: uppercase;
+   font-size: 0.75em;
+   vertical-align: 0.28em;
+   margin-left: -0.48em;
+   margin-right: -0.15em;
+   line-height: 1ex;
+   }
+   
+   .latex span:nth-child(2) {
+   text-transform: uppercase;
+   vertical-align: -0.5ex;
+   margin-left: -0.1667em;
+   margin-right: -0.125em;
+   line-height: 1ex;
+   }
+   
+   /* Prevent line breaks inside an element */
+   .whitespace-nowrap {
+   white-space: nowrap;
+   }
+   
+   /* Heading typography */
+   h1 {
+   font-size: 2.5rem;
+   line-height: 3.25rem;
+   margin-bottom: 1.625rem;
+   }
+   
+   h2 {
+   font-size: 1.7rem;
+   line-height: 2rem;
+   margin-top: 3rem;
+   }
+   
+   h3 {
+   font-size: 1.4rem;
+   margin-top: 2.5rem;
+   }
+   
+   h4 {
+   font-size: 1.2rem;
+   margin-top: 2rem;
+   }
+   
+   h5 {
+   font-size: 1rem;
+   margin-top: 1.8rem;
+   }
+   
+   h6 {
+   font-size: 1rem;
+   font-style: italic;
+   font-weight: normal;
+   margin-top: 2.5rem;
+   }
+   
+   h3,
+   h4,
+   h5,
+   h6 {
+   line-height: 1.625rem;
+   }
+   
+   h1 + h2 {
+   margin-top: 1.625rem;
+   }
+   
+   h2 + h3,
+   h3 + h4,
+   h4 + h5 {
+   margin-top: 0.8rem;
+   }
+   
+   h5 + h6 {
+   margin-top: -0.8rem;
+   }
+   
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+   margin-bottom: 0.8rem;
+   }
+ 
+ 
+ 
+ 
+ 
+ /**
+  * Site header
+  */
+ .site-header {
+   border-top: 5px solid #424242;
+   border-bottom: 1px solid #e8e8e8;
+   min-height: 55.95px;
+   position: relative;
+ }
+ 
+ .site-title {
+   font-size: 26px;
+   font-weight: 300;
+   line-height: 54px;
+   letter-spacing: -1px;
+   margin-bottom: 0;
+   float: left;
+ }
+ .site-title, .site-title:visited {
+   color: #424242;
+ }
+ 
+ .site-nav {
+   float: right;
+   line-height: 54px;
+ }
+ .site-nav .nav-trigger {
+   display: none;
+ }
+ .site-nav .menu-icon {
+   display: none;
+ }
+ .site-nav .page-link {
+   color: #111;
+   line-height: 1.5;
+ }
+ .site-nav .page-link:not(:last-child) {
+   margin-right: 20px;
+ }
+ @media screen and (max-width: 600px) {
+   .site-nav {
+     position: absolute;
+     top: 9px;
+     right: 15px;
+     background-color: #fdfdfd;
+     border: 1px solid #e8e8e8;
+     border-radius: 5px;
+     text-align: right;
+   }
+   .site-nav label[for=nav-trigger] {
+     display: block;
+     float: right;
+     width: 36px;
+     height: 36px;
+     z-index: 2;
+     cursor: pointer;
+   }
+   .site-nav .menu-icon {
+     display: block;
+     float: right;
+     width: 36px;
+     height: 26px;
+     line-height: 0;
+     padding-top: 10px;
+     text-align: center;
+   }
+   .site-nav .menu-icon > svg {
+     fill: #424242;
+   }
+   .site-nav input ~ .trigger {
+     clear: both;
+     display: none;
+   }
+   .site-nav input:checked ~ .trigger {
+     display: block;
+     padding-bottom: 5px;
+   }
+   .site-nav .page-link {
+     display: block;
+     margin-left: 20px;
+     padding: 5px 10px;
+   }
+   .site-nav .page-link:not(:last-child) {
+     margin-right: 0;
+   }
+ }
+ 
+ /**
+  * Site footer
+  */
+ .site-footer {
+   border-top: 1px solid #e8e8e8;
+   padding: 30px 0;
+ }
+ 
+ .footer-heading {
+   font-size: 18px;
+   margin-bottom: 15px;
+ }
+ 
+ .contact-list,
+ .social-media-list {
+   list-style: none;
+   margin-left: 0;
+ }
+ 
+ .footer-col-wrapper {
+   font-size: 15px;
+   color: #828282;
+   margin-left: -15px;
+ }
+ 
+ .footer-col {
+   float: left;
+   margin-bottom: 15px;
+   padding-left: 15px;
+ }
+ 
+ .footer-col-1 {
+   width: -webkit-calc(35% - (30px / 2));
+   width: calc(35% - 30px / 2);
+ }
+ 
+ .footer-col-2 {
+   width: -webkit-calc(20% - (30px / 2));
+   width: calc(20% - 30px / 2);
+ }
+ 
+ .footer-col-3 {
+   width: -webkit-calc(45% - (30px / 2));
+   width: calc(45% - 30px / 2);
+ }
+ 
+ @media screen and (max-width: 800px) {
+   .footer-col-1,
+   .footer-col-2 {
+     width: -webkit-calc(50% - (30px / 2));
+     width: calc(50% - 30px / 2);
+   }
+   .footer-col-3 {
+     width: -webkit-calc(100% - (30px / 2));
+     width: calc(100% - 30px / 2);
+   }
+ }
+ @media screen and (max-width: 600px) {
+   .footer-col {
+     float: none;
+     width: -webkit-calc(100% - (30px / 2));
+     width: calc(100% - 30px / 2);
+   }
+ }
+ /**
+  * Page content
+  */
+ .page-content {
+   padding: 30px 0;
+   flex: 1;
+ }
+ 
+ .page-heading {
+   font-size: 32px;
+ }
+ 
+ .post-list-heading {
+   font-size: 28px;
+ }
+ 
+ .post-list {
+   margin-left: 0;
+   list-style: none;
+ }
+ .post-list > li {
+   margin-bottom: 30px;
+ }
+ 
+ .post-meta {
+   font-size: 14px;
+   color: #828282;
+ }
+ 
+ .post-link {
+   display: block;
+   font-size: 24px;
+ }
+ 
+ /**
+  * Posts
+  */
+ .post-header {
+   margin-bottom: 30px;
+ }
+ 
+ .post-title {
+   font-size: 42px;
+   letter-spacing: -1px;
+   line-height: 1;
+ }
+ @media screen and (max-width: 800px) {
+   .post-title {
+     font-size: 36px;
+   }
+ }
+ 
+ .post-content {
+   margin-bottom: 30px;
+ }
+ .post-content h2 {
+   font-size: 32px;
+ }
+ @media screen and (max-width: 800px) {
+   .post-content h2 {
+     font-size: 28px;
+   }
+ }
+ .post-content h3 {
+   font-size: 26px;
+ }
+ @media screen and (max-width: 800px) {
+   .post-content h3 {
+     font-size: 22px;
+   }
+ }
+ .post-content h4 {
+   font-size: 20px;
+ }
+ @media screen and (max-width: 800px) {
+   .post-content h4 {
+     font-size: 18px;
+   }
+ }
+ 
+ /**
+  * Syntax highlighting styles
+  */
+ .highlight {
+   background: #fff;
+ }
+ .highlighter-rouge .highlight {
+   background: #eef;
+ }
+ .highlight .c {
+   color: #998;
+   font-style: italic;
+ }
+ .highlight .err {
+   color: #a61717;
+   background-color: #e3d2d2;
+ }
+ .highlight .k {
+   font-weight: bold;
+ }
+ .highlight .o {
+   font-weight: bold;
+ }
+ .highlight .cm {
+   color: #998;
+   font-style: italic;
+ }
+ .highlight .cp {
+   color: #999;
+   font-weight: bold;
+ }
+ .highlight .c1 {
+   color: #998;
+   font-style: italic;
+ }
+ .highlight .cs {
+   color: #999;
+   font-weight: bold;
+   font-style: italic;
+ }
+ .highlight .gd {
+   color: #000;
+   background-color: #fdd;
+ }
+ .highlight .gd .x {
+   color: #000;
+   background-color: #faa;
+ }
+ .highlight .ge {
+   font-style: italic;
+ }
+ .highlight .gr {
+   color: #a00;
+ }
+ .highlight .gh {
+   color: #999;
+ }
+ .highlight .gi {
+   color: #000;
+   background-color: #dfd;
+ }
+ .highlight .gi .x {
+   color: #000;
+   background-color: #afa;
+ }
+ .highlight .go {
+   color: #888;
+ }
+ .highlight .gp {
+   color: #555;
+ }
+ .highlight .gs {
+   font-weight: bold;
+ }
+ .highlight .gu {
+   color: #aaa;
+ }
+ .highlight .gt {
+   color: #a00;
+ }
+ .highlight .kc {
+   font-weight: bold;
+ }
+ .highlight .kd {
+   font-weight: bold;
+ }
+ .highlight .kp {
+   font-weight: bold;
+ }
+ .highlight .kr {
+   font-weight: bold;
+ }
+ .highlight .kt {
+   color: #458;
+   font-weight: bold;
+ }
+ .highlight .m {
+   color: #099;
+ }
+ .highlight .s {
+   color: #d14;
+ }
+ .highlight .na {
+   color: #008080;
+ }
+ .highlight .nb {
+   color: #0086B3;
+ }
+ .highlight .nc {
+   color: #458;
+   font-weight: bold;
+ }
+ .highlight .no {
+   color: #008080;
+ }
+ .highlight .ni {
+   color: #800080;
+ }
+ .highlight .ne {
+   color: #900;
+   font-weight: bold;
+ }
+ .highlight .nf {
+   color: #900;
+   font-weight: bold;
+ }
+ .highlight .nn {
+   color: #555;
+ }
+ .highlight .nt {
+   color: #000080;
+ }
+ .highlight .nv {
+   color: #008080;
+ }
+ .highlight .ow {
+   font-weight: bold;
+ }
+ .highlight .w {
+   color: #bbb;
+ }
+ .highlight .mf {
+   color: #099;
+ }
+ .highlight .mh {
+   color: #099;
+ }
+ .highlight .mi {
+   color: #099;
+ }
+ .highlight .mo {
+   color: #099;
+ }
+ .highlight .sb {
+   color: #d14;
+ }
+ .highlight .sc {
+   color: #d14;
+ }
+ .highlight .sd {
+   color: #d14;
+ }
+ .highlight .s2 {
+   color: #d14;
+ }
+ .highlight .se {
+   color: #d14;
+ }
+ .highlight .sh {
+   color: #d14;
+ }
+ .highlight .si {
+   color: #d14;
+ }
+ .highlight .sx {
+   color: #d14;
+ }
+ .highlight .sr {
+   color: #009926;
+ }
+ .highlight .s1 {
+   color: #d14;
+ }
+ .highlight .ss {
+   color: #990073;
+ }
+ .highlight .bp {
+   color: #999;
+ }
+ .highlight .vc {
+   color: #008080;
+ }
+ .highlight .vg {
+   color: #008080;
+ }
+ .highlight .vi {
+   color: #008080;
+ }
+ .highlight .il {
+   color: #099;
+ }
+ 
+ /*# sourceMappingURL=main.css.map */
