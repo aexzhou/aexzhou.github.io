@@ -1,0 +1,18 @@
+.recipe-header {
+    margin-top: 1em;
+}
+
+.recipe-description {
+}
+
+.recipe-meta {
+    display: block;
+}
+
+.recipe-meta > span {
+    padding-right: 1em;
+}
+
+.recipe-content {
+
+}

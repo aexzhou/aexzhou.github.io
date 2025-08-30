@@ -1,0 +1,31 @@
+<!-- _includes/canvas.html -->
+{% assign canvas_name = include.file %}
+{% for canvas in site.canvases %}
+  {% if canvas.slug == canvas_name or canvas.name == canvas_name %}
+    <div class="canvas-wrapper">
+      <h3>{{ include.title | default: canvas.title | default: canvas_name }}</h3>
+      {{ canvas.content }}
+    </div>
+  {% endif %}
+{% endfor %}
+
+<style>
+.canvas-wrapper {
+  margin: 2rem 0;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.canvas-wrapper h3 {
+  background: #f6f8fa;
+  margin: 0;
+  padding: 1rem;
+  border-bottom: 1px solid #e1e4e8;
+  font-weight: 600;
+}
+
+.canvas-container {
+  margin: 0;
+}
+</style>

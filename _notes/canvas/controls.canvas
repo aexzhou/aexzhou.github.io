@@ -1,0 +1,452 @@
+---
+title: controls
+---
+
+{
+  "edges": [
+    {
+      "color": "#000000",
+      "fromNode": "f8418821e620687d",
+      "fromSide": "right",
+      "id": "1590246b17df7a65",
+      "label": "x1",
+      "toNode": "e11cb57a2557f042",
+      "toSide": "left"
+    },
+    {
+      "color": "#000000",
+      "fromNode": "e11cb57a2557f042",
+      "fromSide": "right",
+      "id": "67d8a187b2f94dcd",
+      "label": "e",
+      "toNode": "d1041a50a9c0ade2",
+      "toSide": "left"
+    },
+    {
+      "color": "#000000",
+      "fromNode": "d1041a50a9c0ade2",
+      "fromSide": "right",
+      "id": "2fc33dc5eb3c778c",
+      "label": "x2",
+      "toNode": "8f107950e41e5044",
+      "toSide": "left"
+    },
+    {
+      "color": "#000000",
+      "fromNode": "8f107950e41e5044",
+      "fromSide": "right",
+      "id": "1934388dcc26bb74",
+      "label": "x3",
+      "toNode": "eec792a81d75bd9d",
+      "toSide": "left"
+    },
+    {
+      "color": "#000000",
+      "fromNode": "c01de379243bf0f7",
+      "fromSide": "left",
+      "id": "6fb5828f92327b91",
+      "label": "x5",
+      "toNode": "73c93e8f3605fd3d",
+      "toSide": "right"
+    },
+    {
+      "color": "#000000",
+      "fromNode": "eec792a81d75bd9d",
+      "fromSide": "right",
+      "id": "8576ba4ad3367df2",
+      "label": "x4",
+      "toNode": "4b0e34898072270e",
+      "toSide": "left"
+    },
+    {
+      "color": "#000000",
+      "fromNode": "4b0e34898072270e",
+      "fromSide": "right",
+      "id": "3465e0fa3d3ab370",
+      "toNode": "ec1ed5a1e07b059a",
+      "toSide": "left"
+    },
+    {
+      "color": "#000000",
+      "fromNode": "152923325097afff",
+      "fromSide": "right",
+      "id": "34bfc50122c99724",
+      "toNode": "f8418821e620687d",
+      "toSide": "left"
+    },
+    {
+      "color": "#000000",
+      "fromNode": "eec792a81d75bd9d",
+      "fromSide": "right",
+      "id": "004b671228dcaf00",
+      "toNode": "c01de379243bf0f7",
+      "toSide": "right"
+    },
+    {
+      "color": "#000000",
+      "fromNode": "73c93e8f3605fd3d",
+      "fromSide": "left",
+      "id": "16f794f57d0d2073",
+      "label": "x6",
+      "toNode": "e11cb57a2557f042",
+      "toSide": "bottom"
+    },
+    {
+      "color": "6",
+      "fromNode": "e1741304e567b154",
+      "fromSide": "right",
+      "id": "d65cab4e591ec002",
+      "toNode": "152923325097afff",
+      "toSide": "bottom"
+    },
+    {
+      "color": "6",
+      "fromNode": "d404f2c60dc02576",
+      "fromSide": "left",
+      "id": "191c2426bba2fa72",
+      "toNode": "ec1ed5a1e07b059a",
+      "toSide": "bottom"
+    },
+    {
+      "color": "2",
+      "fromNode": "522271f3eaf0b897",
+      "fromSide": "bottom",
+      "id": "de7ea6db87951dbb",
+      "toNode": "d1041a50a9c0ade2",
+      "toSide": "top"
+    },
+    {
+      "color": "2",
+      "fromNode": "dc88052f2b11719d",
+      "fromSide": "bottom",
+      "id": "83553ddfb966fcfd",
+      "toNode": "8f107950e41e5044",
+      "toSide": "top"
+    },
+    {
+      "color": "2",
+      "fromNode": "da1a840b92c6b950",
+      "fromSide": "bottom",
+      "id": "d9e6579b2b97f1c6",
+      "toNode": "eec792a81d75bd9d",
+      "toSide": "top"
+    },
+    {
+      "color": "2",
+      "fromNode": "d2ac4347d3b717fe",
+      "fromSide": "top",
+      "id": "8b8aae17bf0268ce",
+      "toNode": "c01de379243bf0f7",
+      "toSide": "bottom"
+    },
+    {
+      "color": "2",
+      "fromNode": "51a3b0c022a469fd",
+      "fromSide": "top",
+      "id": "6ba8a6d9b6695030",
+      "toNode": "73c93e8f3605fd3d",
+      "toSide": "bottom"
+    },
+    {
+      "color": "3",
+      "fromNode": "ccaa33bab51b220d",
+      "fromSide": "left",
+      "id": "8991c8849cdc5eea",
+      "toNode": "4b0e34898072270e",
+      "toSide": "top"
+    },
+    {
+      "color": "3",
+      "fromNode": "12645a7b3b771649",
+      "fromSide": "right",
+      "id": "09ba3603c79fd791",
+      "toNode": "f8418821e620687d",
+      "toSide": "top"
+    },
+    {
+      "fromNode": "da1a840b92c6b950",
+      "fromSide": "top",
+      "id": "0c5e703ce81d6dd5",
+      "toNode": "0c7eb7d3e87c347b",
+      "toSide": "left"
+    }
+  ],
+  "nodes": [
+    {
+      "color": "#e3e3e3",
+      "height": 445,
+      "id": "665943646746bfe3",
+      "label": "Joint Space",
+      "styleAttributes": {
+      },
+      "type": "group",
+      "width": 900,
+      "x": -600,
+      "y": -425
+    },
+    {
+      "height": 136,
+      "id": "2f3cecc0dd6837b4",
+      "label": "Sensor/Feedback path (want Unity Gain here)",
+      "styleAttributes": {
+      },
+      "type": "group",
+      "width": 640,
+      "x": -380,
+      "y": -136
+    },
+    {
+      "height": 91,
+      "id": "152923325097afff",
+      "styleAttributes": {
+      },
+      "text": "# $y_{d}$",
+      "type": "text",
+      "width": 80,
+      "x": -880,
+      "y": -362
+    },
+    {
+      "color": "3",
+      "height": 250,
+      "id": "12645a7b3b771649",
+      "styleAttributes": {
+      },
+      "text": "## $K_{tj}$ : A Conversion Constant \n- Converts **task** to **joint** coordinates\n- Pay attention to units ($deg$ vs. $rad$ vs. $turns$, $\\frac{deg}{s}$ vs. $deg$, Tangential travel distance... etc!)\n- Is simply $\\dfrac{1}{K_{jt}}$\n\n",
+      "type": "text",
+      "width": 440,
+      "x": -1510,
+      "y": -685
+    },
+    {
+      "color": "6",
+      "height": 150,
+      "id": "e1741304e567b154",
+      "styleAttributes": {
+      },
+      "text": "## Our desired position/value (What we hope to see)",
+      "type": "text",
+      "width": 260,
+      "x": -1330,
+      "y": -245
+    },
+    {
+      "height": 89,
+      "id": "f8418821e620687d",
+      "styleAttributes": {
+      },
+      "text": "# $K_{tj}$",
+      "type": "text",
+      "width": 100,
+      "x": -740,
+      "y": -360
+    },
+    {
+      "color": "2",
+      "height": 500,
+      "id": "522271f3eaf0b897",
+      "styleAttributes": {
+      },
+      "text": "## $G_{C}$ : Controller \n\nThis is where the PID gets implemented",
+      "type": "text",
+      "width": 321,
+      "x": -547,
+      "y": -1080
+    },
+    {
+      "color": "2",
+      "height": 500,
+      "id": "dc88052f2b11719d",
+      "styleAttributes": {
+      },
+      "text": "# 1)\n## $G_{a}=\\frac{x_{3}}{x_{2}}$ : Actuator\n\n",
+      "type": "text",
+      "width": 335,
+      "x": -162,
+      "y": -1080
+    },
+    {
+      "color": "2",
+      "height": 500,
+      "id": "da1a840b92c6b950",
+      "styleAttributes": {
+      },
+      "text": "# 3)\n## $G_{p}=\\frac{x_{4}}{x_{3}}$ : Plant Model\n\n",
+      "type": "text",
+      "width": 349,
+      "x": 234,
+      "y": -1080
+    },
+    {
+      "color": "1",
+      "height": 50,
+      "id": "9b9b6e5e7f033c52",
+      "styleAttributes": {
+      },
+      "text": "$-$",
+      "type": "text",
+      "width": 60,
+      "x": -530,
+      "y": -270
+    },
+    {
+      "height": 59,
+      "id": "e11cb57a2557f042",
+      "styleAttributes": {
+      },
+      "text": "# $\\sum$\n",
+      "type": "text",
+      "width": 80,
+      "x": -500,
+      "y": -345
+    },
+    {
+      "color": "2",
+      "height": 580,
+      "id": "51a3b0c022a469fd",
+      "styleAttributes": {
+      },
+      "text": "## $H_{s}=\\frac{x_{6}}{x_{5}}$ : Sensor Filter \n\n",
+      "type": "text",
+      "width": 343,
+      "x": -500,
+      "y": 140
+    },
+    {
+      "color": "2",
+      "height": 580,
+      "id": "d2ac4347d3b717fe",
+      "styleAttributes": {
+      },
+      "text": "# 2)\n## $H_{s}=\\frac{x_{5}}{x_{4}}$ : Sensor \n\n",
+      "type": "text",
+      "width": 308,
+      "x": 32,
+      "y": 140
+    },
+    {
+      "height": 89,
+      "id": "d1041a50a9c0ade2",
+      "styleAttributes": {
+      },
+      "text": "# $G_{c}$",
+      "type": "text",
+      "width": 100,
+      "x": -310,
+      "y": -359
+    },
+    {
+      "height": 89,
+      "id": "8f107950e41e5044",
+      "styleAttributes": {
+      },
+      "text": "# $G_{a}$",
+      "type": "text",
+      "width": 100,
+      "x": -117,
+      "y": -359
+    },
+    {
+      "height": 89,
+      "id": "eec792a81d75bd9d",
+      "styleAttributes": {
+      },
+      "text": "# $G_{p}$",
+      "type": "text",
+      "width": 100,
+      "x": 73,
+      "y": -359
+    },
+    {
+      "height": 100,
+      "id": "73c93e8f3605fd3d",
+      "styleAttributes": {
+      },
+      "text": "# $H_{c}$",
+      "type": "text",
+      "width": 99,
+      "x": -310,
+      "y": -120
+    },
+    {
+      "height": 100,
+      "id": "c01de379243bf0f7",
+      "styleAttributes": {
+      },
+      "text": "# $H_{s}$",
+      "type": "text",
+      "width": 100,
+      "x": 73,
+      "y": -120
+    },
+    {
+      "height": 89,
+      "id": "ec1ed5a1e07b059a",
+      "styleAttributes": {
+      },
+      "text": "# $y_{a}$",
+      "type": "text",
+      "width": 83,
+      "x": 500,
+      "y": -359
+    },
+    {
+      "color": "#000000",
+      "height": 55,
+      "id": "8392aa4209ee439c",
+      "styleAttributes": {
+      },
+      "text": "$+$",
+      "type": "text",
+      "width": 65,
+      "x": -580,
+      "y": -400
+    },
+    {
+      "color": "6",
+      "height": 82,
+      "id": "d404f2c60dc02576",
+      "styleAttributes": {
+      },
+      "text": "## Our actual (real life) observation",
+      "type": "text",
+      "width": 320,
+      "x": 600,
+      "y": -177
+    },
+    {
+      "color": "3",
+      "height": 250,
+      "id": "ccaa33bab51b220d",
+      "styleAttributes": {
+      },
+      "text": "## $K_{jt}$ : A Conversion Constant \n- Converts **joint** to **task** coordinates\n- Pay attention to units ($deg$ vs. $rad$ vs. $turns$, $\\frac{deg}{s}$ vs. $deg$, Tangential travel distance... etc!)\n- Is simply $\\dfrac{1}{K_{tj}}$\n\n",
+      "type": "text",
+      "width": 440,
+      "x": 880,
+      "y": -685
+    },
+    {
+      "file": "attachments/ymechyelec.drawio.svg",
+      "height": 220,
+      "id": "0c7eb7d3e87c347b",
+      "styleAttributes": {
+      },
+      "type": "file",
+      "width": 812,
+      "x": 583,
+      "y": -1360
+    },
+    {
+      "height": 89,
+      "id": "4b0e34898072270e",
+      "styleAttributes": {
+      },
+      "text": "# $K_{jt}$",
+      "type": "text",
+      "width": 100,
+      "x": 340,
+      "y": -360
+    }
+  ]
+}

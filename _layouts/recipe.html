@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="recipe">
+  <h1 class="recipe-header">{{ page.title }}</h1>
+  
+  {% if page.description %}
+    <p class="recipe-description">{{ page.description }}</p>
+  {% endif %}
+
+  <div class="recipe-meta">
+    {% if page.prep_time %}<span>Prep: {{ page.prep_time }}</span>{% endif %}
+    {% if page.cook_time %}<span>Cook: {{ page.cook_time }}</span>{% endif %}
+    {% if page.base_ratio %}<span>Base Scale = Per: {{ page.base_ratio }}</span>{% endif %}
+  </div>
+
+  <div class="recipe-content">
+    {{ content }}
+  </div>
+
+  <a href="{{ '/recipes/' | relative_url }}"> <=== Back to all recipes</a>
+</div>

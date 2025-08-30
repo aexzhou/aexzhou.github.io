@@ -31,11 +31,21 @@ github_username:  aexzhou
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-optional-front-matter
 
 include: ["_pages"]
 
 domain: alexzhou.ca
 url: https://alexzhou.ca
+
+collections:
+  canvases:
+    output: true
+    permalink: /canvases/:name/
+  recipes:
+    output: true 
+    permalink: /:collection/:name/
+  
 
 
 # Exclude from processing.
