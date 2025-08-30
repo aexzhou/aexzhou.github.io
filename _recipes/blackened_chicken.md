@@ -9,7 +9,6 @@ cook_time: "like 10-15 min"
 base_ratio: "decently-sized chicken breast" 
 ---
 
-
 ## You'll need:
 
 | Ingredient | Quantity | Units |
@@ -36,6 +35,12 @@ base_ratio: "decently-sized chicken breast"
 7. **[Optional]** Throw in some cilantro (this adds a light aroma to the chicken)
 8. Cover with lid while on simmer-level flame and wait like 1-2 minutes.
 9. Enjoy!
+
+<div class="gif-container">
+  <img src="{{ '/assets/gifs/blackened_chicken.gif' | relative_url }}" 
+       alt="blackened chicken" 
+       class="responsive-gif">
+</div>
 
 > ## Note:
 The taste of salt scales linearly with quantity. Whereas the taste of other spices is non-linear and saturates with increasing quantity.\\

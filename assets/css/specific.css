@@ -28,3 +28,16 @@ img[alt=aboutpic]:hover {
         height: calc(100% * 0.7);
     }
 }
+
+.gif-container {
+    text-align: center;
+    margin: 20px 0;
+}
+  
+.responsive-gif {
+    max-width: 100%;
+    height: auto;
+    max-height: 20em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
