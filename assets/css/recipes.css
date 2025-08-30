@@ -16,3 +16,8 @@
 .recipe-content {
 
 }
+
+.recipe-item > * {
+    padding-right: 1em;
+    display: inline-block;
+}
