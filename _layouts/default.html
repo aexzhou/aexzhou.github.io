@@ -3,17 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="stylesheet" href="/assets/css/specific.css">
-    <link rel="stylesheet" href="/assets/css/recipes.css">
+  <title>{{ page.title | default: "~ Alex's Homepage ~" }}</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/specific.css">
+  <link rel="stylesheet" href="/assets/css/recipes.css">
 </head>
 <body>
   <header class="site-header" role="banner">
     <div class="wrapper">
-      <nav class="site-nav">
-        {% include navigation.html %}
-      </nav>
+      {% include navigation.html %}
     </div>
   </header>
 
@@ -22,6 +20,12 @@
       {{ content }}
     </div>
   </main>
+
+  <footer class="page-footer">
+    <div style="margin-top:8px; color:#fff;">
+      &copy; {{ site.time | date: "%Y" }} Alex
+    </div>
+  </footer>
 </body>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

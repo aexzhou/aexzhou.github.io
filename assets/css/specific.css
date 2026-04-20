@@ -1,15 +1,18 @@
-img[alt=aboutpic] { 
+img[alt=aboutpic] {
     width: 300px;
     margin: 10px 15px;
     transform: rotate(var(--rotation));
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+    border: 3px ridge #8a7a5a;
+    padding: 4px;
+    background: #fff;
+    box-shadow: 5px 5px 0 rgba(60, 45, 25, 0.35);
+    transition: transform 0.2s linear;
 }
 
 img[alt=aboutpic]:hover {
-    transform: rotate(0deg) scale(1.02);
+    transform: rotate(0deg) scale(1.03);
     z-index: 10;
+    border-color: #7a1f1f;
 }
 
 .my-gallery {
@@ -17,8 +20,29 @@ img[alt=aboutpic]:hover {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px;
+    padding: 14px;
     gap: 10px;
+    background: #ede2c7;
+    border: 2px solid #8a7a5a;
+}
+
+.my-gallery a {
+    display: inline-block;
+    padding: 6px 14px;
+    background: linear-gradient(to bottom, #fdf8ea, #cfc19d);
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #5c4f36;
+    border-bottom: 2px solid #5c4f36;
+    color: #1a3a5c !important;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.my-gallery a:hover {
+    background: #f0e4c4;
+    color: #7a1f1f !important;
 }
 
 @media (max-width: 768px) {
@@ -33,11 +57,14 @@ img[alt=aboutpic]:hover {
     text-align: center;
     margin: 20px 0;
 }
-  
+
 .responsive-gif {
     max-width: 100%;
     height: auto;
     max-height: 20em;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 3px ridge #8a7a5a;
+    padding: 3px;
+    background: #fff;
+    box-shadow: 4px 4px 0 rgba(60, 45, 25, 0.3);
+    display: inline-block;
 }
