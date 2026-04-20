@@ -20,8 +20,4 @@ This is my personal website, where I post about the work I do.
 
 </div>
 
-Check out this cool video:
-
-<iframe width="400" height="300"
-src="https://www.youtube.com/embed/I9QuAMcz9hc?si=EjK9-7UhZjQe9AQ3">
-</iframe>
+Check out this cool video of a [self balancing robot](https://www.youtube.com/watch?v=I9QuAMcz9hc&t=155s) I made with [Mazda Farrahi](https://www.mazdaf.com/home)
